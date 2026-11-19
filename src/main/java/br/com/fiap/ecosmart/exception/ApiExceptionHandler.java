@@ -46,6 +46,7 @@ public class ApiExceptionHandler {
                 return ResponseEntity.badRequest().body(new ErrorResponseDto(
                         "Erro 400", "O registro pai informado não existe."));
             default:
+                e.printStackTrace();
                 return ResponseEntity.internalServerError().body(new ErrorResponseDto(
                         "Procure o administrador do sistema", "Erro ao acessar o banco de dados."));
         }
